@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //!!cleared
   s2t.SpeechToText speechToText = s2t.SpeechToText(); // s2t object
   bool isListening = false; // defalt animation off without button press
   String textbox = "Tap the mic button to start your journal!";
@@ -43,6 +44,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  //!!cleared
   @override
   void initState() {
     // TODO: implement initState

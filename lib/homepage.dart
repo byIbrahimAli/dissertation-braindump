@@ -11,22 +11,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  s2t.SpeechToText _speechToText =
-      s2t.SpeechToText(); // s2t object // eqv _speechToText
-  bool _speechEnabled = false; // defalt animation off without button press
-  // String transcription =
-  //     "Tap the mic button to start your journal!"; // eqv _lastWords
-  String _transcription = '';
+  s2t.SpeechToText _speechToText = s2t.SpeechToText(); // s2t object
+  bool _speechEnabled = false;
+  String _transcription = ''; // Captured transcription
 
   @override
   void initState() {
     super.initState();
-    //speechToText = s2t.SpeechToText(); // starts s2t service
     _initSpeech();
   }
 
   /// Happens once per app
   /// Initialises speechToText functionality
+  /// async cos requires internet
   void _initSpeech() async {
     _speechEnabled = await _speechToText.initialize();
     setState(() {});
@@ -113,8 +110,8 @@ class _HomePageState extends State<HomePage> {
                   // recognition is not yet ready or not supported on
                   // the target device
                   : _speechEnabled
-                      ? 'Tap the microphone to start the journal...'
-                      : 'Speech not available',
+                      ? 'Tap the microphone to start the journal 💛'
+                      : 'Speech currently unavailable. Check mic permissions & internet connection and try again.',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 20,

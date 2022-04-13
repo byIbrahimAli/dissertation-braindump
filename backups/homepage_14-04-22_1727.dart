@@ -11,8 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  s2t.SpeechToText _speechToText = s2t.SpeechToText(); // s2t object
-  bool _speechEnabled = false;
+  s2t.SpeechToText _speechToText =
+      s2t.SpeechToText(); // s2t object // eqv _speechToText
+  bool _speechEnabled = false; // defalt animation off without button press
+  // String transcription =
+  //     "Tap the mic button to start your journal!"; // eqv _lastWords
   String _transcription = '';
 
   @override
@@ -110,8 +113,8 @@ class _HomePageState extends State<HomePage> {
                   // recognition is not yet ready or not supported on
                   // the target device
                   : _speechEnabled
-                      ? 'Tap the microphone to start the journal 💛'
-                      : 'Speech currently unavailable. Check mic permissions & internet connection and try again.',
+                      ? 'Tap the microphone to start the journal...'
+                      : 'Speech not available',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 20,
