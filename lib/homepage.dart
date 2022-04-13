@@ -79,9 +79,9 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(
               12.0), // wow similar to CSS :D Pads container
           child: Text(
-            _speechEnabled & _speechToText.isListening
-                ? _transcription
-                : 'Speech currently unavailable. Check mic permissions & internet connection and try again.',
+            !_speechEnabled & _speechToText.isListening
+                ? 'Speech currently unavailable. Check mic permissions & internet connection and try again.'
+                : _transcription,
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 20,
