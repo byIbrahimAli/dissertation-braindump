@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: AvatarGlow(
-        animate: _speechEnabled,
+        animate: _speechToText.isListening,
         repeat: true,
         endRadius: 80,
         glowColor: Colors.pink,
