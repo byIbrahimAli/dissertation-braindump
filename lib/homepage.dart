@@ -13,7 +13,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   s2t.SpeechToText _speechToText = s2t.SpeechToText(); // s2t object
   bool _speechEnabled = false;
-  String _transcription = ''; // Captured transcription
+  String _transcription =
+      'Tap the microphone to start the journal 💛'; // Captured transcription
 
   @override
   void initState() {
@@ -25,7 +26,11 @@ class _HomePageState extends State<HomePage> {
   /// Initialises speechToText functionality
   /// async cos requires internet
   void _initSpeech() async {
-    _speechEnabled = await _speechToText.initialize();
+    _speechEnabled = await _speechToText.initialize(
+      // onStatus & onError added to help with debugging for any issues
+      onStatus: (status) => print("$status"),
+      onError: (errorNotification) => print("$errorNotification"),
+    );
     setState(() {});
   }
 
@@ -100,22 +105,13 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.all(
               12.0), // wow similar to CSS :D Pads container
-          child: Container(
-            child: Text(
-              // transcription, //It's better to initialise Strings outside widgets
-              _speechToText.isListening
-                  ? '$_transcription'
-                  // If listening isn't active but could be tell the user
-                  // how to start it, otherwise indicate that speech
-                  // recognition is not yet ready or not supported on
-                  // the target device
-                  : _speechEnabled
-                      ? 'Tap the microphone to start the journal 💛'
-                      : 'Speech currently unavailable. Check mic permissions & internet connection and try again.',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-              ),
+          child: Text(
+            _speechEnabled & _speechToText.isListening
+                ? _transcription
+                : 'Speech currently unavailable. Check mic permissions & internet connection and try again.',
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
             ),
           ),
         ),
