@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
 
   /// Performs transcription
   /// Requires internet connection therefore needs async
+  //!!cleared
   void listen() async {
     if (!isListening) {
       // if true

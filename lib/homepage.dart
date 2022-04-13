@@ -47,40 +47,13 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  /// Called if listening
+  /// saves recognised words under _transcription
   void _onSpeechResult(SpeechRecognitionResult result) {
     setState(() {
       _transcription = result.recognizedWords;
     });
   }
-
-  /// Performs transcription
-  /// Requires internet connection therefore needs async
-  // void listen() async {
-  //   if (!_speechEnabled) {
-  //     // if true
-  //     bool available = await _speechToText.initialize(
-  //       onStatus: (status) => print("$status"),
-  //       onError: (errorNotification) => print("$errorNotification"),
-  //     );
-  //     if (available) {
-  //       setState(() {
-  //         //resets state
-  //         _speechEnabled = true;
-  //       });
-  //       _speechToText.listen(
-  //         onResult: (result) => setState(() {
-  //           transcription =
-  //               result.recognizedWords; // recognised words stored and displayed
-  //         }), // this is our text
-  //       );
-  //     }
-  //   } else {
-  //     setState(() {
-  //       _speechEnabled = false;
-  //     });
-  //     _speechToText.stop();
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -116,40 +89,21 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed:
-            // If not yet listening for speech start, otherwise stop
-            _speechToText.isNotListening ? _startListening : _stopListening,
-        tooltip: 'Listen',
-        child: Icon(_speechToText.isNotListening ? Icons.mic_off : Icons.mic),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: AvatarGlow(
+        animate: _speechEnabled,
+        repeat: true,
+        endRadius: 80,
+        glowColor: Colors.pink,
+        duration: Duration(milliseconds: 1000),
+        child: FloatingActionButton(
+          onPressed:
+              // If not yet listening for speech start, otherwise stop
+              _speechToText.isNotListening ? _startListening : _stopListening,
+          tooltip: 'Listen',
+          child: Icon(_speechToText.isNotListening ? Icons.mic_off : Icons.mic),
+        ),
       ),
-
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      // floatingActionButton: AvatarGlow(
-      //   // fAB wrapped with AvatarGlow widget
-      //   // Before child we're specifying AvatarGlow settings
-      //   animate: _speechEnabled,
-      //   repeat: true,
-      //   endRadius: 80,
-      //   glowColor: Colors.pink,
-      //   duration: Duration(milliseconds: 1000),
-      //   child: FloatingActionButton(
-      //     onPressed: _speechToText.isNotListening
-      //         ? _startListening()
-      //         : _stopListening(),
-      //     tooltip: 'Listen',
-      //     child: Icon(_speechToText.isNotListening ? Icons.mic_off : Icons.mic),
-
-      //     // // the mic itself :D
-      //     // onPressed: () {
-      //     //   listen(); // method which listens to user ready for speech to text
-      //     // },
-      //     // child: Icon(_speechEnabled
-      //     //     ? Icons.mic
-      //     //     : Icons
-      //     //         .mic_none), // if true (islistening) mic on, if false mic off
-      //   ),
-      // ),
     );
   }
 }
