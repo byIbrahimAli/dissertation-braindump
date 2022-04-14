@@ -22,7 +22,7 @@ with open(result, 'w', newline='') as file2:
     for specific_column_in_data in data :
         print(specific_column_in_data[1], specific_column_in_data[0])
         csvwriter = csv.writer(file2)
-        csvwriter.writerow(["'" + specific_column_in_data[0] + "': HighlightedWord( onTap: () => print('" + specific_column_in_data[0] + "'), textStyle: const TextStyle(color: Colors." + specific_column_in_data[1] + ", fontWeight: FontWeight.bold,),),"])
+        csvwriter.writerow(["'" + specific_column_in_data[0] + "': HighlightedWord( onTap: () => print('" + specific_column_in_data[0] + "'), textStyle: const TextStyle(color: Colors." + specific_column_in_data[1] + ", fontWeight: FontWeight.w600, fontSize: 20,),),"])
 
 # Finally figured that shit out but don't know how to remove double quotes...
 
