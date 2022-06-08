@@ -14,7 +14,7 @@ Design a user-centred audio journal app which recommends related wellbeing and m
 
 # Folders of Interest
 - experiments: Used Python to convert a csv library of mental health keywords into Flutter code for highlight function
-- lib: main files I modified to get the app working
+- lib: Main files I modified to get the app working
 
 # Running the App
 
