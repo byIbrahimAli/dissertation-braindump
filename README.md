@@ -1,16 +1,20 @@
 # braindumpapp
 
-A new Flutter project.
+This is a part of my dissertation, a high-fidelity prototype of my app idea. It focuses on 2 features most voted by participants.
 
-## Getting Started
+My app idea was to create a cross platform app which allows users to better express their emotions, avoiding the consequences from suppressed and repressed emotions. Users essentially use the app as an audio journal. The journals are then analysed to recommend relevant wellbeing articles to the user. 
 
-This project is a starting point for a Flutter application.
+Want more detail? Check out my (dissertation poster)[https://www.behance.net/gallery/142374585/Some-of-my-work/modules/804366911].
 
-A few resources to get you started if this is your first Flutter project:
+## Dissertation Aim
+Design a user-centred audio journal app which recommends related wellbeing and mental health articles.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Final Mockups of the App
+(Check them out here along with my wireframes, improved designs, and other work)[https://www.behance.net/gallery/142374585/Some-of-my-work]
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Running the App
+
+## Getting the mic to work
+1. You'll have to enable mic permissions in the VM
+2. Then go into Chrome and search using the Mic, this will prompt a mic permissions different to the previous step. Once you get that working, mic is set!
+3. Go into the app, mic should be A-OK
