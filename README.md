@@ -4,13 +4,13 @@ This is a part of my dissertation, a high-fidelity prototype of my app idea. It 
 
 My app idea was to create a cross platform app which allows users to better express their emotions, avoiding the consequences from suppressed and repressed emotions. Users essentially use the app as an audio journal. The journals are then analysed to recommend relevant wellbeing articles to the user. 
 
-Want more detail? Check out my (dissertation poster)[https://www.behance.net/gallery/142374585/Some-of-my-work/modules/804366911].
+Want more detail? Check out my[dissertation poster](https://www.behance.net/gallery/142374585/Some-of-my-work/modules/804366911).
 
 ## Dissertation Aim
 Design a user-centred audio journal app which recommends related wellbeing and mental health articles.
 
 ## Final Mockups of the App
-(Check them out here along with my wireframes, improved designs, and other work)[https://www.behance.net/gallery/142374585/Some-of-my-work]
+[Check them out here along with my wireframes, improved designs, and other work](https://www.behance.net/gallery/142374585/Some-of-my-work)
 
 # Running the App
 
