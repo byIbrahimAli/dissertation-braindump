@@ -12,6 +12,10 @@ Design a user-centred audio journal app which recommends related wellbeing and m
 ## Final Mockups of the App
 [Check them out here along with my wireframes, improved designs, and other work](https://www.behance.net/gallery/142374585/Some-of-my-work)
 
+# Folders of Interest
+- experiments: Used Python to convert a csv library of mental health keywords into Flutter code for highlight function
+- lib: main files I modified to get the app working
+
 # Running the App
 
 ## Getting the mic to work
