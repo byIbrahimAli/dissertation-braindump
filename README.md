@@ -1,6 +1,8 @@
 # braindumpapp
 
-This is a part of my dissertation, a high-fidelity prototype of my app idea. It focuses on 2 features most voted by participants.
+This is a part of my dissertation, a high-fidelity prototype of my app idea. It focuses on 2 features most voted by participants:
+* Transcriber
+* Highlighted keywords (highlights keywords to help users summarise their journal & is used to search for relevant wellbeing articles)
 
 My app idea was to create a cross platform app which allows users to better express their emotions, avoiding the consequences from suppressed and repressed emotions. Users essentially use the app as an audio journal. The journals are then analysed to recommend relevant wellbeing articles to the user. 
 
